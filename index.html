@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="HealthConnect - Mini Healthcare Support Web App for patients and volunteers.">
+  <title>HealthConnect | Healthcare Support</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a class="brand" href="#home"><span class="brand-icon">+</span> HealthConnect</a>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#register">Register</a>
+        <a href="#assistant">FAQ Assistant</a>
+      </nav>
+      <a class="nav-btn" href="#register">Get Support</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">NGO Healthcare Support • Concept App</span>
+          <h1>Connecting people with the <span>right support</span>.</h1>
+          <p>
+            A simple digital platform for patients and volunteers to submit
+            support requests, get quick FAQ answers, and receive an automatic
+            request summary.
+          </p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#register">Register for Support</a>
+            <a class="btn secondary" href="#assistant">Ask FAQ Assistant</a>
+          </div>
+          <div class="trust-row">
+            <div><strong>24/7</strong><span>FAQ assistance</span></div>
+            <div><strong>2</strong><span>Registration types</span></div>
+            <div><strong>100%</strong><span>Simple & responsive</span></div>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="card-top">
+            <span class="status-dot"></span>
+            <span>Support request</span>
+            <span class="live">ACTIVE</span>
+          </div>
+          <div class="profile-row">
+            <div class="avatar">HC</div>
+            <div>
+              <strong>Healthcare Support</strong>
+              <p>We are here to guide you.</p>
+            </div>
+          </div>
+          <div class="mini-message">How can I register for healthcare support?</div>
+          <div class="mini-reply">You can submit the support form below. We will show an automatic confirmation and request summary.</div>
+          <a href="#register" class="small-link">Open registration →</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">What the app offers</span>
+          <h2>Simple tools for a healthcare support workflow</h2>
+          <p>Designed as a concept-level solution that an NGO could expand into a full platform.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card">
+            <div class="service-icon">🩺</div>
+            <h3>Patient Support</h3>
+            <p>Patients can share their basic details and describe the support they need.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">🤝</div>
+            <h3>Volunteer Registration</h3>
+            <p>Volunteers can register their availability and the type of assistance they can provide.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">💬</div>
+            <h3>FAQ Assistant</h3>
+            <p>A lightweight chatbot answers common questions using predefined healthcare-support knowledge.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">⚡</div>
+            <h3>Auto Summary</h3>
+            <p>After submission, the app automatically creates a clear request summary and confirmation.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="register" class="section form-section">
+      <div class="container form-layout">
+        <div class="form-intro">
+          <span class="eyebrow">Registration</span>
+          <h2>Tell us how we can support you.</h2>
+          <p>
+            Choose whether you are requesting support as a patient or registering
+            as a volunteer. This demo stores the latest request only in your browser.
+          </p>
+          <div class="info-box">
+            <strong>Demo privacy note</strong>
+            <span>No information is sent to a server in this concept-level version.</span>
+          </div>
+        </div>
+
+        <form id="supportForm" class="support-form" novalidate>
+          <div class="form-row">
+            <div class="field">
+              <label for="fullName">Full Name *</label>
+              <input id="fullName" name="fullName" type="text" placeholder="Enter your name" required>
+              <small class="error" id="fullNameError"></small>
+            </div>
+            <div class="field">
+              <label for="email">Email *</label>
+              <input id="email" name="email" type="email" placeholder="you@example.com" required>
+              <small class="error" id="emailError"></small>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="phone">Phone *</label>
+              <input id="phone" name="phone" type="tel" placeholder="10-digit phone number" required>
+              <small class="error" id="phoneError"></small>
+            </div>
+            <div class="field">
+              <label for="userType">Registration Type *</label>
+              <select id="userType" name="userType" required>
+                <option value="">Select one</option>
+                <option value="Patient">Patient</option>
+                <option value="Volunteer">Volunteer</option>
+              </select>
+              <small class="error" id="userTypeError"></small>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="city">City *</label>
+              <input id="city" name="city" type="text" placeholder="e.g. Bengaluru" required>
+              <small class="error" id="cityError"></small>
+            </div>
+            <div class="field">
+              <label for="need">Support Needed *</label>
+              <select id="need" name="need" required>
+                <option value="">Select support</option>
+                <option>Medical guidance information</option>
+                <option>Hospital / clinic information</option>
+                <option>Volunteer assistance</option>
+                <option>Transport support information</option>
+                <option>Community healthcare support</option>
+                <option>Other</option>
+              </select>
+              <small class="error" id="needError"></small>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" maxlength="300" placeholder="Briefly describe your requirement..."></textarea>
+            <div class="char-count"><span id="charCount">0</span>/300</div>
+          </div>
+
+          <button class="btn primary submit-btn" type="submit">Submit Support Request</button>
+          <p class="form-note">* Required fields. This demo is not an emergency medical service.</p>
+        </form>
+      </div>
+    </section>
+
+    <section id="resultSection" class="section result-section hidden">
+      <div class="container">
+        <div class="result-card">
+          <div class="success-icon">✓</div>
+          <div>
+            <span class="eyebrow">Request received</span>
+            <h2 id="resultTitle">Thank you!</h2>
+            <p id="resultMessage"></p>
+          </div>
+        </div>
+        <div class="summary-card">
+          <div class="summary-head">
+            <div>
+              <span class="eyebrow">Automatic summary</span>
+              <h3>Support Request</h3>
+            </div>
+            <span class="status-badge">SUBMITTED</span>
+          </div>
+          <div id="summaryGrid" class="summary-grid"></div>
+          <button id="newRequestBtn" class="btn secondary">Submit Another Request</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="assistant" class="section assistant-section">
+      <div class="container assistant-layout">
+        <div>
+          <span class="eyebrow">Automation / AI concept</span>
+          <h2>Healthcare FAQ Assistant</h2>
+          <p>
+            Ask a common question. The prototype identifies keywords and returns
+            a relevant predefined response. In a production version, this can be
+            replaced with a Gemini/OpenAI API or an NGO knowledge base.
+          </p>
+          <div class="suggestions">
+            <button class="suggestion">How do I register?</button>
+            <button class="suggestion">What services are available?</button>
+            <button class="suggestion">How can I volunteer?</button>
+            <button class="suggestion">Is this an emergency service?</button>
+          </div>
+        </div>
+
+        <div class="chatbot">
+          <div class="chat-header">
+            <div class="bot-avatar">🤖</div>
+            <div>
+              <strong>HealthConnect Assistant</strong>
+              <span><i></i> Online</span>
+            </div>
+          </div>
+          <div id="chatMessages" class="chat-messages">
+            <div class="chat-bubble bot">Hello! I can answer common questions about registration, volunteering, and this support platform.</div>
+          </div>
+          <form id="chatForm" class="chat-input">
+            <input id="chatInput" type="text" placeholder="Type your question..." autocomplete="off">
+            <button type="submit" aria-label="Send">➤</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <a class="brand" href="#home"><span class="brand-icon">+</span> HealthConnect</a>
+        <p>Mini Healthcare Support Web App • Concept Project</p>
+      </div>
+      <div class="footer-note">Built with HTML, CSS & JavaScript</div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
